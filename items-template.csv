@@ -1,11 +1,11 @@
 id,name,description,category,image_url,location
-coffee-corner,Coffee Corner,Cozy local cafe known for pour-over coffee and fresh pastries,Cafe,https://picsum.photos/seed/coffee-corner/800/600,Main Street
-green-grocer,Green Grocer,Neighborhood produce market with seasonal fruits and vegetables,Grocery,https://picsum.photos/seed/green-grocer/800/600,River District
-book-nook,The Book Nook,Independent bookstore with curated fiction and kids titles,Bookstore,https://picsum.photos/seed/book-nook/800/600,Oak Avenue
-fit-studio,Fit Studio,Small-group fitness classes for beginners and busy professionals,Fitness,https://picsum.photos/seed/fit-studio/800/600,North Plaza
-tech-stop,Tech Stop,Device accessories repair and setup help for phones and laptops,Electronics,https://picsum.photos/seed/tech-stop/800/600,Central Mall
-artisan-bites,Artisan Bites,Handmade sandwiches salads and daily soup specials,Restaurant,https://picsum.photos/seed/artisan-bites/800/600,Market Lane
-pet-haven,Pet Haven,Friendly pet supply shop with food toys and grooming essentials,Pet Store,https://picsum.photos/seed/pet-haven/800/600,Sunset Boulevard
-craft-hub,Craft Hub,Creative supply store for painting journaling and classroom projects,Crafts,https://picsum.photos/seed/craft-hub/800/600,West End
-city-cycles,City Cycles,Urban bike rentals tune-ups and safety gear for all ages,Sports,https://picsum.photos/seed/city-cycles/800/600,Hillside
-home-glow,Home Glow,Simple decor and lighting picks for dorms apartments and homes,Home,https://picsum.photos/seed/home-glow/800/600,Lakeside
+thriftstore-sketch-001,Forest Explorer,Detailed pencil sketch of a figure walking through tall trees with sunlight filtering through,Landscape,https://picsum.photos/seed/sketch-forest/800/600,Thrift Store Uptown
+thriftstore-sketch-002,Abstract Dreams,Colorful mixed media piece with swirling patterns and unexpected shapes,Abstract,https://picsum.photos/seed/sketch-abstract/800/600,Thrift Store Uptown
+park-bench-001,Lost in Thought,Simple charcoal portrait of a person looking peacefully into the distance,Portrait,https://picsum.photos/seed/sketch-portrait/800/600,Park Bench - Riverside
+street-corner-001,Cosmic Cat,Whimsical ink drawing of a cat with stars and moons around its head,Character Design,https://picsum.photos/seed/sketch-cat/800/600,Street Corner - Oak & 5th
+cafe-wall-001,Coffee Shop Moment,Quick watercolor sketch capturing the cozy feeling of a busy morning cafe,Moment,https://picsum.photos/seed/sketch-cafe/800/600,Coffee Shop Wall
+bookstore-sketch-001,Reading Dreams,Detailed illustration of stacked books forming a magical doorway,Illustration,https://picsum.photos/seed/sketch-books/800/600,Bookstore Zine Section
+park-path-001,Urban Garden,Colored pencil drawing of wildflowers growing between city blocks,Nature,https://picsum.photos/seed/sketch-flowers/800/600,Park Path
+museum-step-001,Geometric Soul,Bold black and white geometric design exploring perspective and shadows,Geometric,https://picsum.photos/seed/sketch-geo/800/600,Museum Steps
+street-art-001,Night Sky Dreamer,Sketch of a person reaching toward an imagined starry night,Fantasy,https://picsum.photos/seed/sketch-night/800/600,Alley Wall - Westside
+thriftstore-sketch-003,Vintage Patterns,Ornate decorative drawing inspired by antique designs and textures,Pattern,https://picsum.photos/seed/sketch-pattern/800/600,Thrift Store Uptown

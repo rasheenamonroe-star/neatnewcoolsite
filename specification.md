@@ -1,10 +1,10 @@
 # Specification: [Your App Idea Name]
 
-App description: [Write a one or two sentences describing what your app does and who it’s for.]
+App description: My app is for people to share random sketches and art they come across in the wild.
 
 ## Style and Theme
 
-[Describe the look and feel of your app.] 
+The app should be modern and structured yet stylized with a wide range of colors and little designs 
 
 Overall mood:
 Examples: fun and playful, calm and professional, bold and energetic, etc.
@@ -15,7 +15,7 @@ Use the *style-guide.html* for details on styling -- fonts, colors, and layout.
 
 ### Story 1 (most important)
 
-[Write 1-2 sentences. Who is using the app, what do they want to do, and what do they see when it works? Write it like you are describing it to a friend.]
+Jim finds a sketchbook at the thrift store full of sketches and decides he wants to upload these sketches somewhere for all to see.
 
 ---
 

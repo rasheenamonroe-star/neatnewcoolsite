@@ -1,5 +1,58 @@
+/* Custom theme colors based on style guide */
+:root {
+  --color-primary: #002fff;
+  --color-secondary: #ff00ea;
+  --color-accent: #ff0066;
+  --color-bg-main: #b29efe;
+  --color-bg-secondary: #c0d9ff;
+}
+
+body {
+  background-color: var(--color-bg-main) !important;
+}
+
+/* Primary button styling */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.text-bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+/* Secondary button styling */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Card styling - modern with rounded corners */
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .collection-card-image {
   height: 180px;
+  border-radius: 20px 20px 0 0;
 }
 
 .collection-description {
@@ -12,4 +65,17 @@
 
 .item-detail-image {
   max-height: 320px;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* Badge styling */
+.badge {
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.text-bg-light {
+  background-color: var(--color-bg-secondary) !important;
 }

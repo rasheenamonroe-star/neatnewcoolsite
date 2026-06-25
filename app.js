@@ -36,7 +36,24 @@ const app = Vue.createApp({
       error: '',
     });
 
-    fetch('items-template.csv')
+    const resolveImageUrl = (value) => {
+      const imageUrl = String(value || '').trim();
+      if (!imageUrl) {
+        return '';
+      }
+
+      const hasProtocol = /^(https?:)?\/\//i.test(imageUrl) || imageUrl.startsWith('data:');
+      const isRootRelative = imageUrl.startsWith('/');
+      const isRelativeAssetPath = imageUrl.startsWith('./') || imageUrl.startsWith('assets/');
+
+      if (hasProtocol || isRootRelative || isRelativeAssetPath) {
+        return imageUrl;
+      }
+
+      return `assets/${imageUrl}`;
+    };
+
+    fetch('items.csv')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Could not load CSV data file.');
@@ -57,7 +74,7 @@ const app = Vue.createApp({
                 name: String(row.name || '').trim(),
                 description: String(row.description || '').trim(),
                 category: String(row.category || '').trim(),
-                imageUrl: String(row.image_url || '').trim(),
+                imageUrl: resolveImageUrl(row.image_url),
                 location: String(row.location || '').trim(),
               }));
               itemsStore.error = '';
