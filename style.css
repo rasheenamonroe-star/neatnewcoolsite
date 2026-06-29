@@ -3,51 +3,73 @@
   --color-primary: #002fff;
   --color-secondary: #ff00ea;
   --color-accent: #ff0066;
-  --color-bg-main: #b29efe;
+  --color-bg-main: #190278;
   --color-bg-secondary: #c0d9ff;
+}
+
+/* Headers use Honk display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Honk", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
 }
 
 body {
   background-color: var(--color-bg-main) !important;
+  color: #ffffff;
 }
 
 /* Primary button styling */
 .btn-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: #f8d71b;
+  border-color: #ff009d;
+  color: #520005;
+  padding: 10px 14px;
+  border-radius: 100px;
+  border-width: 4px;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background-color: #c1c1ff;
+  border-color: #42a7ff;
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  color: #520005;
+  border-color: #ff009d;
 }
 
 .text-bg-primary {
-  background-color: var(--color-primary) !important;
+  background-color: #002fff !important;
 }
 
 /* Secondary button styling */
-.btn-secondary {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
+.btn-secondary,
+.btn-outline-secondary {
+  background-color: #ff00ea;
+  border-color: #ff00ea;
+  color: #ffffff;
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+.btn-secondary:hover,
+.btn-outline-secondary:hover {
+  background-color: #ff0066;
+  border-color: #ff0066;
 }
 
 /* Card styling - modern with rounded corners */
 .card {
   border-radius: 20px;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #023ea5;
+  background-color: #fbe1f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .collection-card-image {

@@ -14,7 +14,8 @@ export default {
         <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>
       </div>
 
-      <p class="text-muted">Browse a simple dataset loaded from a CSV file.</p>
+      <p class="text-muted">Browse a vast collection of discovered art pieces.</p>
+      
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading items...
