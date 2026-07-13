@@ -8,9 +8,7 @@ export default {
       </router-link>
 
       <div class="ms-auto d-flex gap-2">
-        <router-link class="btn btn-outline-primary btn-sm" to="/">
-          <i class="bi bi-house me-1"></i>Home
-        </router-link>
+        <!-- Home button removed as requested -->
         <router-link class="btn btn-outline-primary btn-sm d-flex align-items-center" to="/items">
           <i class="bi bi-images me-1"></i>Sketches
         </router-link>

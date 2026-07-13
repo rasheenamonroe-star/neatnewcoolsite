@@ -1,5 +1,11 @@
 export default {
   name: 'collection-page-component',
+  props: {
+    isSketchesPage: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const itemsStore = Vue.inject('itemsStore');
 
@@ -16,9 +22,6 @@ export default {
 
       <p class="text-white">Browse a vast collection of discovered art pieces.</p>
       <p class="text-white">NOTE: Keep in mind that the info provided for each piece may not be completely accurate. The info below is purely speculative.</p>
-      
-    
-      
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading items...
@@ -32,22 +35,40 @@ export default {
         No items found in the dataset.
       </div>
 
-      <div v-else class="row g-3">
-        <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
-          <article class="card h-100 shadow-sm border-0">
+      <div v-else :class="isSketchesPage ? 'gallery-image' : 'row g-3'">
+        <div
+          :class="isSketchesPage ? 'img-box' : 'col-12 col-md-6 col-lg-4'"
+          v-for="item in itemsStore.items"
+          :key="item.id"
+        >
+          <article
+            :class="isSketchesPage ? 'card h-100 shadow-sm border-0' : 'card h-100 shadow-sm border-0'"
+          >
             <router-link v-if="item.imageUrl" :to="'/items/' + item.id" class="d-block">
               <img
                 :src="item.detailImageUrl || item.imageUrl"
                 :alt="item.name"
-                class="card-img-top collection-card-image" />
+                :class="isSketchesPage ? '' : 'card-img-top collection-card-image'"
+              />
+              <div v-if="isSketchesPage" class="transparent-box">
+                <div class="caption">
+                  <p>{{ item.name }}</p>
+                  <p class="opacity-low">{{ item.description || 'No description available.' }}</p>
+                </div>
+              </div>
             </router-link>
+
             <div
               v-else
-              class="collection-card-image d-flex align-items-center justify-content-center bg-light text-muted">
+              class="collection-card-image d-flex align-items-center justify-content-center bg-light text-muted"
+            >
               No image available
             </div>
 
-            <div class="card-body d-flex flex-column align-items-center text-center">
+            <div
+              v-if="!isSketchesPage"
+              class="card-body d-flex flex-column align-items-center text-center"
+            >
               <h2 class="h5 card-title mb-2">{{ item.name }}</h2>
 
               <p class="card-text text-muted flex-grow-1 collection-description">
