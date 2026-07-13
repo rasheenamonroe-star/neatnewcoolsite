@@ -15,6 +15,7 @@ export default {
       </div>
 
       <p class="text-white">Browse a vast collection of discovered art pieces.</p>
+      <p class="text-white">NOTE: Keep in mind that the info provided for each piece may not be completely accurate. The info below is purely speculative.</p>
       
     
       
@@ -34,11 +35,12 @@ export default {
       <div v-else class="row g-3">
         <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
           <article class="card h-100 shadow-sm border-0">
-            <img
-              v-if="item.imageUrl"
-              :src="item.imageUrl"
-              :alt="item.name"
-              class="card-img-top collection-card-image object-fit-cover" />
+            <router-link v-if="item.imageUrl" :to="'/items/' + item.id" class="d-block">
+              <img
+                :src="item.imageUrl"
+                :alt="item.name"
+                class="card-img-top collection-card-image" />
+            </router-link>
             <div
               v-else
               class="collection-card-image d-flex align-items-center justify-content-center bg-light text-muted">
@@ -55,7 +57,7 @@ export default {
                 {{ item.description || 'No description available.' }}
               </p>
 
-              <p class="small mb-3"><strong>Location:</strong> {{ item.location || 'N/A' }}</p>
+              <p class="small mb-3"><strong>Dates:</strong> {{ item.dates || 'N/A' }}</p>
 
               <div class="d-grid">
                 <router-link :to="'/items/' + item.id" class="btn btn-outline-secondary btn-sm">

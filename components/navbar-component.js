@@ -1,8 +1,11 @@
 export default {
   name: 'navbar-component',
   template: /* html */ `
-    <nav class="navbar sticky-top bg-white border-bottom px-3">
-      <span class="navbar-brand mb-0 h1"><i class="bi bi-palette me-2"></i>Sketch Gallery</span>
+    <nav class="navbar sticky-top bg-white border-bottom px-5">
+      <router-link class="navbar-brand mb-0 h1 d-flex align-items-center navbar-logo-link" to="/">
+        <img src="./assets/Art%20for%20webapp/1.png" alt="Logo" class="me-2 navbar-logo-image" />
+        The Lost Galleries
+      </router-link>
 
       <div class="ms-auto d-flex gap-2">
         <router-link class="btn btn-outline-primary btn-sm" to="/">
@@ -12,7 +15,10 @@ export default {
           <i class="bi bi-images me-1"></i>Sketches
         </router-link>
         <router-link class="btn btn-outline-primary btn-sm" to="/about">
-          <i class="bi bi-info-circle me-1"></i>About
+          <i class="bi bi-info-circle me-1"></i>About This Webapp
+        </router-link>
+        <router-link class="btn btn-outline-primary btn-sm" to="/about-creator">
+          <i class="bi bi-person me-1"></i>About The Creator
         </router-link>
       </div>
     </nav>

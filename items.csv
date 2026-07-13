@@ -1,4 +1,14 @@
-id,name,description,image_url
-chickens,Chickens,look at those chickens!!!,chickens.jpg
-greenberries,Greenberry Cat,"Twitter is so funny, holy cow",greenberries.jpg
-pfp,Nerdy Kitty,meow meow meow meowm meowq meowm oemwkm meow meow moemw meow meow  emowmem meow  meowmmekow mkeow moewn :3 :3 :3 🤓🤓🤓,pfp.jpg
+id,name,description,date,image_url
+entry1,Entry #1,A woman in a dress.,Unknown,entry1.jpg
+entry2,Entry #2,2 character doodles.,Unknown,entry2.jpg
+entry3,Entry #3,A human like creature with tree antlers. ,Unknown,entry3.jpg
+entry4,Entry #4,A futuristic looking woman weilding a sword.,unknown,entry4.jpg
+entry5,Entry #5,A drawing of Spongebob Squarepants.,Circa 2014,entry5.jpg
+entry6,Entry #6,A detailed pen drawing of a chicken skull. ,"October 5th, 2018",entry6.jpg
+entry7,Entry #7,An anime style elf listening to music ,Circa 2014,entry7.jpg
+entry8,Entry #8,o)---(o,Unknown,entry8.jpg
+entry9,Entry #9,A woman jogging along a sidewalk with a marill(?),Unknown,entry9.jpg
+entry10,Entry #10,A chibi cat person dressing up as a cupcake for halloween. ,Unknown,entry10.jpg
+entry11,Entry #11,A striped looking mamal. ,Unknown,entry11.jpg
+entry12,Entry #12,A drawing of a woman looking at the night sky. ,Unknown,entry12.jpg
+entry13,Entry #13,A woman holding a bazooka gun.,Unknown,entry13.jpg

@@ -1,5 +1,6 @@
 import LandingPageComponent from './components/landing-page-component.js';
 import AboutPageComponent from './components/about-page-component.js';
+import AboutCopyPageComponent from './components/about-copy-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
@@ -12,6 +13,10 @@ const routes = [
   {
     path: '/about',
     component: AboutPageComponent,
+  },
+  {
+    path: '/about-creator',
+    component: AboutCopyPageComponent,
   },
   {
     path: '/items',
@@ -36,49 +41,86 @@ const app = Vue.createApp({
       error: '',
     });
 
-    const resolveImageUrl = (value) => {
+    // Resolve image path. Try several candidate locations where images might live.
+    const resolveImageUrl = async (value) => {
       const imageUrl = String(value || '').trim();
-      if (!imageUrl) {
-        return '';
-      }
+      if (!imageUrl) return '';
 
+      const candidates = [];
+      // if absolute or protocol-based, return as-is
       const hasProtocol = /^(https?:)?\/\//i.test(imageUrl) || imageUrl.startsWith('data:');
       const isRootRelative = imageUrl.startsWith('/');
-      const isRelativeAssetPath = imageUrl.startsWith('./') || imageUrl.startsWith('assets/');
+      if (hasProtocol || isRootRelative) return imageUrl;
 
-      if (hasProtocol || isRootRelative || isRelativeAssetPath) {
-        return imageUrl;
+      // If the CSV already points to an assets path, use it directly
+      if (imageUrl.startsWith('assets/') || imageUrl.startsWith('./') ) candidates.push(imageUrl);
+
+      // common local paths to try
+      candidates.push(`assets/${imageUrl}`);
+      candidates.push(`assets/Art for webapp/${imageUrl}`);
+
+      // Try each candidate with a HEAD request and return the first that exists
+      for (const p of candidates) {
+        try {
+          // HEAD is lightweight; some servers may not support it, so fall back to GET
+          const resp = await fetch(p, { method: 'HEAD' });
+          if (resp && resp.ok) return p;
+        } catch (e) {
+          try {
+            const resp2 = await fetch(p, { method: 'GET' });
+            if (resp2 && resp2.ok) return p;
+          } catch (e2) {
+            // ignore and continue
+          }
+        }
       }
 
+      // last resort: return the most likely path
       return `assets/${imageUrl}`;
     };
 
-    fetch('items.csv')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Could not load CSV data file.');
+    // Load the local CSV file `items.csv` which references images in the `assets/` folder.
+    // If it is not available, fall back to `items-template.csv` so the app still works.
+    const loadCsv = async () => {
+      try {
+        let resp = await fetch('items.csv');
+        if (!resp.ok) {
+          // try fallback template
+          resp = await fetch('items-template.csv');
         }
-        return response.text();
-      })
-      .then((csvText) => {
+        if (!resp.ok) throw new Error('Could not load CSV data file.');
+        const csvText = await resp.text();
+
         Papa.parse(csvText, {
           header: true,
           skipEmptyLines: true,
-          complete: ({ data, errors }) => {
+          complete: async ({ data, errors }) => {
             if (errors.length > 0) {
               itemsStore.error = 'There was a problem reading the CSV data.';
               itemsStore.items = [];
-            } else {
-              itemsStore.items = data.map((row) => ({
-                id: String(row.id || '').trim(),
-                name: String(row.name || '').trim(),
-                description: String(row.description || '').trim(),
-                category: String(row.category || '').trim(),
-                imageUrl: resolveImageUrl(row.image_url),
-                location: String(row.location || '').trim(),
-              }));
-              itemsStore.error = '';
+              itemsStore.isLoading = false;
+              return;
             }
+
+            // Resolve image URLs asynchronously for each row
+            const resolved = await Promise.all(
+              data.map(async (row) => {
+                const rawImage = row.image_url || row.imageUrl || row.image || '';
+                const imageUrl = await resolveImageUrl(rawImage);
+                return {
+                  id: String(row.id || '').trim(),
+                  name: String(row.name || '').trim(),
+                  description: String(row.description || '').trim(),
+                  category: String(row.category || '').trim(),
+                  imageUrl,
+                  // Use `dates` from the CSV; fall back to `date` or `location` if present
+                  dates: String(row.dates || row.date || row.location || '').trim(),
+                };
+              })
+            );
+
+            itemsStore.items = resolved;
+            itemsStore.error = '';
             itemsStore.isLoading = false;
           },
           error: () => {
@@ -87,12 +129,14 @@ const app = Vue.createApp({
             itemsStore.isLoading = false;
           },
         });
-      })
-      .catch(() => {
+      } catch (e) {
         itemsStore.error = 'There was a problem loading data.';
         itemsStore.items = [];
         itemsStore.isLoading = false;
-      });
+      }
+    };
+
+    loadCsv();
 
     Vue.provide('itemsStore', itemsStore);
 
