@@ -11,9 +11,16 @@ export default {
        Ra'Sheena worked for Teenworks before in 2025 at the Cardinal Greenway. She was tasked to exterminate invasive species of plants. When she signed up for teenworks in 2026, at first she was going to work at IU health but things changed. She was offered to work at Nextech and she accepted. When she first started she didnt know anything about coding but after a few weeks she finally got the hang of it and found it fun. 
       </p>
       <h2 class="h1 mt-4 w-50">Contact Info</h2>
-      <p class="w-50">
-        Contact us! send us an email at sketchgallery@example.com and share your discovery with the rest of the world.
-      </p>
+      <ul class="w-50">
+        <li>Email: rasheenamonroe@gmail.com</li>
+        <li><a href="https://www.linkedin.com/in/rasheena-monroe" target="_blank">My Linkedin Page
+        <li><a href="https://profile.indeed.com/p/rasheenam-76h5xk5" target="_blank">My Indeed Page</a></li>
+        <li><a href="https://www.artstation.com/user-9638748" target="_blank">My ArtStation Page</a></li>
+
+</a></li>
+      </ul>
+      
+
     </section>
   `,
 };

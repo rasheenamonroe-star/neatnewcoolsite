@@ -4,15 +4,15 @@ export default {
     <section class="container py-4">
       <h1 class="w-50">About This Gallery</h1>
       <p class="w-50">
-        This gallery and website as a whole is dedicated to the lost and found artworks in the world. It celebrates the beauty in progress of art. One may see an old drawing as a piece of trash but to the rest of the world it is a wonderful piece of art.
+      The Lost Galleries is an online gallery dedicated to showcasing pieces of art that have been discovered in sketchbooks found by the public. The pieces shown off here present the dedication and history of not just the art but the era it was created in and the artists who made them. 
       </p> 
-      <h2 class="h400 mt-4 w-50">Our Mission</h2>
+      <h2 class="h2 mt-4 w-50">The Story Behind This Website</h2>
       <p class="w-50">
-        We believe that art belongs to everyone, and that the sketches and drawings we find in unexpected places deserve to be shared and appreciated. By collecting and showcasing these pieces, we honor the artists and celebrate the moments of creativity that make our community special.
+      About a year ago, my aunt gave me a bunch of sketchbooks. She was well aware of my interest for art and thought these would be good materials for me to use. Unfortunately, since these sketchbooks came from thrift stores they were all used. Looking through the sketchbooks, I've gained a bit of inspiration and also thought to myself "I wish there was a way for me to show off these sketchbooks." Fast forward to the current day when I became a catapult and turned this dream into a reality! 
       </p>
       <h2 class="h400 mt-4 w-50">Have a discovered art piece you want to share?</h2>
       <p class="w-50">
-        Contact us! send us an email at sketchgallery@example.com and share your discovery with the rest of the world.
+        Just email me at rasheenamonroe@gmail.com
       </p>
     </section>
   `,

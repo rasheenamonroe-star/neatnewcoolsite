@@ -41,7 +41,7 @@ const app = Vue.createApp({
       error: '',
     });
 
-    // Resolve image path. Try several candidate locations where images might live.
+    // Resolve image path for collection thumbnails.
     const resolveImageUrl = async (value) => {
       const imageUrl = String(value || '').trim();
       if (!imageUrl) return '';
@@ -53,7 +53,7 @@ const app = Vue.createApp({
       if (hasProtocol || isRootRelative) return imageUrl;
 
       // If the CSV already points to an assets path, use it directly
-      if (imageUrl.startsWith('assets/') || imageUrl.startsWith('./') ) candidates.push(imageUrl);
+      if (imageUrl.startsWith('assets/') || imageUrl.startsWith('./')) candidates.push(imageUrl);
 
       // common local paths to try
       candidates.push(`assets/${imageUrl}`);
@@ -77,6 +77,39 @@ const app = Vue.createApp({
 
       // last resort: return the most likely path
       return `assets/${imageUrl}`;
+    };
+
+    // Resolve the larger detail-page image from the new lostgalleriesentries folder.
+    const resolveDetailImageUrl = async (value) => {
+      const imageUrl = String(value || '').trim();
+      if (!imageUrl) return '';
+
+      const hasProtocol = /^(https?:)?\/\//i.test(imageUrl) || imageUrl.startsWith('data:');
+      const isRootRelative = imageUrl.startsWith('/');
+      if (hasProtocol || isRootRelative) return imageUrl;
+
+      const fileName = imageUrl.split('/').pop() || imageUrl;
+      const baseName = fileName.replace(/\.[^.]+$/, '');
+      const candidates = [];
+
+      candidates.push(`assets/Art for webapp/lostgalleriesentries/${baseName}.png`);
+      candidates.push(`assets/Art for webapp/lostgalleriesentries/${fileName}`);
+
+      for (const p of candidates) {
+        try {
+          const resp = await fetch(p, { method: 'HEAD' });
+          if (resp && resp.ok) return p;
+        } catch (e) {
+          try {
+            const resp2 = await fetch(p, { method: 'GET' });
+            if (resp2 && resp2.ok) return p;
+          } catch (e2) {
+            // ignore and continue
+          }
+        }
+      }
+
+      return imageUrl;
     };
 
     // Load the local CSV file `items.csv` which references images in the `assets/` folder.
@@ -107,12 +140,14 @@ const app = Vue.createApp({
               data.map(async (row) => {
                 const rawImage = row.image_url || row.imageUrl || row.image || '';
                 const imageUrl = await resolveImageUrl(rawImage);
+                const detailImageUrl = await resolveDetailImageUrl(rawImage);
                 return {
                   id: String(row.id || '').trim(),
                   name: String(row.name || '').trim(),
                   description: String(row.description || '').trim(),
                   category: String(row.category || '').trim(),
                   imageUrl,
+                  detailImageUrl,
                   // Use `dates` from the CSV; fall back to `date` or `location` if present
                   dates: String(row.dates || row.date || row.location || '').trim(),
                 };

@@ -191,7 +191,7 @@ button,
 .card {
   border-radius: 20px;
   border: 3px solid #626f85;
-  background-color: #fbe1f5;
+  background: linear-gradient(145deg, #fbe1f547 0%, #b66eff65 40%, #5fafff6b 100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-size: 0.95rem;
