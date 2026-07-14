@@ -1,7 +1,7 @@
 export default {
   name: 'about-creator-page-component',
   template: /* html */ `
-    <section class="container py-4">
+    <section class="container py-4 about-creator-page-center">
       <h1 class="w-50">About The Creator: Ra'Sheena Monroe</h1>
       <p class="w-50">
         Ra'Sheena Monroe (or commonly reffered to as Renee in her group) Is a young adult who has a passion for art and a curiosity that seems to grow more and more as time goes by. She graduated high school in 2026 and in her time attending, she specialized in art. Her main interests include nature, animals, history and pop culture (mostly video games and animated series.)
@@ -21,6 +21,14 @@ export default {
       </ul>
       
 
+
+      <div class="artdrive-gallery mt-5 w-75 d-flex flex-wrap justify-content-center gap-3">
+        <img src="./assets/Art for webapp/artdrivefolder/drag.jpg" alt="drag" class="artdrive-image" />
+        <img src="./assets/Art for webapp/artdrivefolder/fox.jpg" alt="fox" class="artdrive-image" />
+        <img src="./assets/Art for webapp/artdrivefolder/mole.jpg" alt="mole" class="artdrive-image" />
+        <img src="./assets/Art for webapp/artdrivefolder/pega.jpg" alt="pega" class="artdrive-image" />
+        <img src="./assets/Art for webapp/artdrivefolder/wolf.jpg" alt="wolf" class="artdrive-image" />
+      </div>
     </section>
   `,
 };

@@ -14,7 +14,8 @@ export default {
     };
   },
   template: /* html */ `
-    <section class="container py-4">
+    <section class="container py-4 position-relative">
+      <div class="landing-page-overlay" aria-hidden="true"></div>
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="h500 mb-0">Collection</h1>
         <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>

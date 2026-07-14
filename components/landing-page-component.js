@@ -5,7 +5,7 @@ export default {
     <div class="landing-page-shell">
       <div class="landing-page-overlay" aria-hidden="true"></div>
       <div class="container py-4 landing-page-content">
-        <h1 class="mb-3">✨ Sketch Gallery</h1>
+        <h1 class="mb-4">✨ The Lost Galleries</h1>
         <div class="homepage-action-buttons mb-4">
           <router-link to="/items" class="btn btn-primary"><i class="bi bi-images me-1"></i>Browse Sketches</router-link>
           <div class="homepage-intro-copy">
