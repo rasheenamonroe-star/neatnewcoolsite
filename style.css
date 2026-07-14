@@ -1,3 +1,17 @@
+/* Style for image on left side of About The Creator intro paragraph */
+.about-creator-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-creator-image {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
 /* Styles for absolute overlay in About This Webapp page */
 .overlayp-overlay {
   position: absolute;
