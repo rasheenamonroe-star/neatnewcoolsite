@@ -13,17 +13,18 @@ export default {
       itemsStore,
     };
   },
+
   template: /* html */ `
-    <section class="container py-4 position-relative">
+    <section class="container py-4 position-relative text-center">
       <div class="sketty-overlay"></div>
       <div class="landing-page-overlay" aria-hidden="true"></div>
-      <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="mb-3">
         <h1 class="h500 mb-0">Collection</h1>
         <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>
       </div>
 
-      <p class="text-white">Browse a vast collection of discovered art pieces.</p>
-      <p class="text-white">NOTE: Keep in mind that the info provided for each piece may not be completely accurate. The info below is purely speculative.</p>
+      <p class="text-white mx-auto" style="max-width: 600px;">Browse a vast collection of discovered art pieces.</p>
+      <p class="text-white mx-auto" style="max-width: 600px;">NOTE: Keep in mind that the info provided for each piece may not be completely accurate. The info below is purely speculative.</p>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading items...
@@ -37,7 +38,7 @@ export default {
         No items found in the dataset.
       </div>
 
-      <div v-else :class="isSketchesPage ? 'gallery-image' : 'row g-3'">
+      <div v-else :class="isSketchesPage ? 'gallery-image d-flex justify-content-center flex-wrap' : 'row g-3 justify-content-center'">
         <div
           :class="isSketchesPage ? 'img-box' : 'col-12 col-md-6 col-lg-4'"
           v-for="item in itemsStore.items"
