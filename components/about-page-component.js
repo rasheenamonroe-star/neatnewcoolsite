@@ -1,7 +1,8 @@
 export default {
   name: 'about-page-component',
   template: /* html */ `
-    <section class="container py-4 about-page-center">
+    <section class="container py-4 about-page-center position-relative">
+      <div class="overlayp-overlay"></div>
       <h1 class="w-50">About This Gallery</h1>
       <p class="w-50">
       The Lost Galleries is an online gallery dedicated to showcasing pieces of art that have been discovered in sketchbooks found by the public. The pieces shown off here present the dedication and history of not just the art but the era it was created in and the artists who made them. 

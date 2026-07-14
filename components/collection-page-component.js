@@ -15,6 +15,7 @@ export default {
   },
   template: /* html */ `
     <section class="container py-4 position-relative">
+      <div class="sketty-overlay"></div>
       <div class="landing-page-overlay" aria-hidden="true"></div>
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="h500 mb-0">Collection</h1>

@@ -19,8 +19,8 @@ export default {
 
 </a></li>
       </ul>
-      
-
+      <h2 class="h1 mt-4 w-50">Some of Her Artworks</h2>
+       
 
       <div class="artdrive-gallery mt-5 w-75 d-flex flex-wrap justify-content-center gap-3">
         <img src="./assets/Art for webapp/artdrivefolder/drag.jpg" alt="drag" class="artdrive-image" />

@@ -1,3 +1,54 @@
+/* Styles for absolute overlay in About This Webapp page */
+.overlayp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/Art for webapp/overlayp.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.8;
+}
+/* Styles for absolute background overlay in Collection page */
+.sketty-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/Art for webapp/sketty.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  z-index: -1;
+  opacity: 0.8;
+}
+/* Repeating background for Collection page */
+.collection-page-background {
+  background-image: url('./assets/Art for webapp/sketty.png');
+  background-repeat: repeat;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow: hidden;
+  
+}
+/* Custom style for p.small.mb-3 */
+p.small.mb-3 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
+}
+/* Custom muted text style */
+.text-muted {
+  color: #ffffff !important;
+}
 /* Background and centering for About This Webapp page */
 .about-page-center {
   background-image: url('./assets/Art for webapp/aboutweb.png');
@@ -17,6 +68,21 @@
   align-items: center;
   text-align: center;
   min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+ .overlayp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/Art for webapp/overlayp.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.8;
 }
 /* Background for About The Creator page with yee.png */
 .about-creator-page-center {
@@ -290,6 +356,13 @@ button,
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.item-detail-info {
+  color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .item-detail-page {
@@ -310,12 +383,12 @@ button,
   border-radius: 15px;
   display: block;
   margin: 0 auto;
-  background-color: #fbe1f500;
+  background-color: #f911c300;
 
 }
 
 .item-detail-info {
-  color: #313131;
+  color: #ffffff;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 0.5rem 1rem;

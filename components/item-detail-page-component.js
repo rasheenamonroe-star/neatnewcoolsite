@@ -14,7 +14,8 @@ export default {
     };
   },
   template: /* html */ `
-    <section class="item-detail-page">
+    <section class="item-detail-page position-relative">
+      <div class="sketty-overlay"></div>
       <router-link to="/items" class="btn btn-link ps-0 mb-3 text-white">← Back to collection</router-link>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">

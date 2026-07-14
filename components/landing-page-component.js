@@ -19,7 +19,7 @@ export default {
           This website is dedicated to the lost and found. Each of the sketches displayed in this gallery present a glimpse into an era of an artist. This website was inspired by a collection of sketchbooks I aqquired from my aunt. I felt the best way to show these discovered art pieces was with a dedicated website. 
         </p>
         <p style="max-width: 610px;">
-          Explore the collection to see sketches and illustrations of all kinds—from detailed portraits and landscapes to abstract designs and playful characters. Each piece is a window into someone's creative moment.
+          Explore this gallery of discovered art pieces. each piece has a story to tell about the era and the artist. Each piece is special in its own way and deserves to be seen by the world.
         </p>
       </div>
     </div>
